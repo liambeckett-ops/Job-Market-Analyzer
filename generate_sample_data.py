@@ -110,7 +110,7 @@ def generate_sample_jobs(num_jobs=100):
 
 def main():
     """Generate and save sample data."""
-    print("🎲 Generating sample job data...")
+    print("Generating sample job data...")
     
     jobs = generate_sample_jobs(150)
     
@@ -118,8 +118,8 @@ def main():
     with open('data/sample_jobs.json', 'w') as f:
         json.dump(jobs, f, indent=2)
     
-    print(f"✅ Generated {len(jobs)} sample jobs")
-    print("📁 Saved to: data/sample_jobs.json")
+    print(f"Generated {len(jobs)} sample jobs")
+    print("Saved to: data/sample_jobs.json")
     
     # Quick stats
     companies = set(job['company'] for job in jobs)
@@ -131,7 +131,7 @@ def main():
     from collections import Counter
     top_skills = Counter(all_skills).most_common(5)
     
-    print(f"\n📊 Sample Data Overview:")
+    print(f"\n Sample Data Overview:")
     print(f"Companies: {len(companies)}")
     print(f"Locations: {len(locations)}")
     print(f"Top skills: {', '.join([skill for skill, count in top_skills])}")

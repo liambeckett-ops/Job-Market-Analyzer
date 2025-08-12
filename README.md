@@ -1,18 +1,30 @@
-# Job Market Analyzer 📊
+# Job Market Analyzer Pro
 
-A comprehensive web scraping and data analysis tool for analyzing job market trends, salary insights, and skill requirements across multiple job boards.
+A sophisticated, enterprise-grade job market analysis platform with advanced AI-powered features, user authentication, and comprehensive analytics.
 
-## Features 🚀
+## 🚀 Features
 
-- **Multi-Platform Scraping**: Extract job data from Indeed, LinkedIn Jobs, and other major job boards
-- **Salary Analysis**: Comprehensive salary trend analysis with visualizations
-- **Skills Analytics**: Identify the most in-demand skills by role and location
-- **Location Insights**: Geographic distribution of opportunities and salary variations
-- **Company Analysis**: Top hiring companies and their posting patterns
-- **Interactive Dashboard**: Streamlit-powered dashboard for data exploration
-- **Export Capabilities**: Generate PDF reports and CSV exports
+### Core Analysis Capabilities
+- **Skills Gap Analysis**: AI-powered identification of skill gaps with personalized learning roadmaps
+- **Salary Trend Predictions**: Multi-factor salary forecasting with market confidence indicators
+- **Industry Comparison Dashboard**: Interactive cross-industry analytics with 10+ industries
+- **Resume Optimization**: AI-powered resume analysis with ATS compatibility scoring
+- **Geographic Market Analysis**: Cost-of-living adjusted salary comparisons
 
-## Project Structure 📁
+### Enterprise Features
+- **User Authentication**: JWT-based authentication with secure session management
+- **Personalized Dashboards**: User-specific analytics based on career goals and preferences
+- **Analysis History**: Comprehensive tracking of user analyses with favorites system
+- **Advanced Caching**: Performance-optimized caching system for faster analysis
+- **Data Persistence**: Robust user profile and preference management
+
+### Interactive Interface
+- **Unified Dashboard**: Streamlit-powered comprehensive analytics interface
+- **Real-time Visualizations**: Interactive charts, graphs, and geographic maps
+- **Export Capabilities**: Multi-format exports (JSON, CSV, HTML, Markdown)
+- **Mobile-Responsive**: Optimized for desktop and mobile viewing
+
+## Project Structure
 
 ```
 Job-Market-Analyzer/
@@ -51,7 +63,7 @@ Job-Market-Analyzer/
 └── requirements.txt               # Python dependencies
 ```
 
-## Installation 🛠️
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -76,7 +88,7 @@ cp .env.example .env
 # Edit .env with your settings
 ```
 
-## Usage 🎯
+## Usage
 
 ### Command Line Interface
 
@@ -110,7 +122,7 @@ analyzer = SalaryAnalyzer()
 salary_insights = analyzer.analyze_trends(jobs)
 ```
 
-## Sample Analysis Results 📈
+## Sample Analysis Results
 
 ### Salary Trends
 - **Average Salary**: $85,000 - $120,000
@@ -129,7 +141,7 @@ salary_insights = analyzer.analyze_trends(jobs)
 2. Microsoft (142 postings)
 3. Amazon (138 postings)
 
-## Configuration ⚙️
+## Configuration
 
 Edit `config/settings.yaml` to customize:
 - Scraping intervals
@@ -137,11 +149,11 @@ Edit `config/settings.yaml` to customize:
 - Visualization preferences
 - Export formats
 
-## Ethics & Legal Compliance 🔒
+## Ethics & Legal Compliance
 
 This tool respects robots.txt files and implements rate limiting to ensure responsible scraping. Always review and comply with website terms of service.
 
-## Contributing 🤝
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -149,11 +161,11 @@ This tool respects robots.txt files and implements rate limiting to ensure respo
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License 📄
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Roadmap 🗺️
+## Roadmap
 
 - [ ] Additional job board integrations (Glassdoor, ZipRecruiter)
 - [ ] Machine learning salary prediction models
@@ -161,12 +173,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Mobile app version
 - [ ] API endpoint for external integrations
 
-## Author 👨‍💻
+## Author
 
 **Liam Beckett Jorgensen**
 - GitHub: [@liambeckett-ops](https://github.com/liambeckett-ops)
-- LinkedIn: [Your LinkedIn Profile]
+- LinkedIn: [https://www.linkedin.com/in/liam-jorgensen-191130133/]
 
 ---
 
-*Built with Python, BeautifulSoup, Pandas, and ❤️*
+*Built with Python, BeautifulSoup, Pandas, and CoPilot*
