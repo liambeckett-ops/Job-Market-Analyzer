@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Indeed job scraper implementation.
 Scrapes job listings from Indeed.com with respect to rate limits and robots.txt.
@@ -226,3 +227,20 @@ class IndeedScraper(BaseScraper):
                 jobs.append(job_data)
                 
         return jobs
+=======
+from .base_scraper import BaseScraper
+
+class IndeedScraper(BaseScraper):
+    def fetch_jobs(self, query, location):
+        # Placeholder: Implement actual scraping logic here
+        return [{
+            'title': 'Software Engineer',
+            'company': 'Indeed',
+            'location': location,
+            'description': 'Sample job from Indeed',
+        }]
+
+if __name__ == "__main__":
+    scraper = IndeedScraper()
+    print(scraper.fetch_jobs('engineer', 'remote'))
+>>>>>>> d2a851d (Initial project refactor: add scrapers, database manager, and analysis features)

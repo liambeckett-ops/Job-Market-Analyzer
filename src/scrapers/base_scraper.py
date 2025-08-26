@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Base scraper class for job market data extraction.
 Provides common functionality for all job board scrapers.
@@ -195,4 +196,12 @@ class BaseScraper(ABC):
         Returns:
             Dictionary with detailed job information
         """
+=======
+import abc
+
+class BaseScraper(abc.ABC):
+    """Abstract base class for job site scrapers."""
+    @abc.abstractmethod
+    def fetch_jobs(self, query, location):
+>>>>>>> d2a851d (Initial project refactor: add scrapers, database manager, and analysis features)
         pass

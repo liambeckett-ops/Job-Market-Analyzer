@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Database manager for job market data storage and retrieval.
 Uses SQLite for local data persistence.
@@ -392,3 +393,59 @@ class DatabaseManager:
         """Close database connection."""
         # SQLite connections are automatically closed when context exits
         pass
+=======
+import sqlite3
+from contextlib import closing
+
+class DatabaseManager:
+    def __init__(self, db_path='jobs.db'):
+        self.db_path = db_path
+        self._create_table()
+
+    def _create_table(self):
+        with closing(sqlite3.connect(self.db_path)) as conn:
+            with conn:
+                conn.execute('''
+                    CREATE TABLE IF NOT EXISTS jobs (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        title TEXT,
+                        company TEXT,
+                        location TEXT,
+                        description TEXT,
+                        source TEXT
+                    )
+                ''')
+
+    def insert_job(self, job, source):
+        with closing(sqlite3.connect(self.db_path)) as conn:
+            with conn:
+                conn.execute('''
+                    INSERT INTO jobs (title, company, location, description, source)
+                    VALUES (?, ?, ?, ?, ?)
+                ''', (job['title'], job['company'], job['location'], job['description'], source))
+
+    def get_jobs(self, company=None, location=None):
+        with closing(sqlite3.connect(self.db_path)) as conn:
+            query = 'SELECT * FROM jobs WHERE 1=1'
+            params = []
+            if company:
+                query += ' AND company = ?'
+                params.append(company)
+            if location:
+                query += ' AND location = ?'
+                params.append(location)
+            return conn.execute(query, params).fetchall()
+
+    def count_jobs_by_company(self):
+        with closing(sqlite3.connect(self.db_path)) as conn:
+            return conn.execute('SELECT company, COUNT(*) FROM jobs GROUP BY company').fetchall()
+
+    def count_jobs_by_location(self):
+        with closing(sqlite3.connect(self.db_path)) as conn:
+            return conn.execute('SELECT location, COUNT(*) FROM jobs GROUP BY location').fetchall()
+
+if __name__ == "__main__":
+    db = DatabaseManager()
+    print("Jobs by company:", db.count_jobs_by_company())
+    print("Jobs by location:", db.count_jobs_by_location())
+>>>>>>> d2a851d (Initial project refactor: add scrapers, database manager, and analysis features)
